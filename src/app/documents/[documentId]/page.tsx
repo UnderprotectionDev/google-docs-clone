@@ -7,8 +7,7 @@ interface DocumentIDPageProps {
 export default async function DocumentIDPage({ params }: DocumentIDPageProps) {
   const { documentId } = await params;
   return (
-    <div>
-      Document ID: {documentId}
+    <div className="min-h-screen bg-[#FAFBFD]">
       <Editor />
     </div>
   );
