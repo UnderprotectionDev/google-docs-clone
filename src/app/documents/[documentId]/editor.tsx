@@ -56,7 +56,9 @@ export function Editor() {
     extensions: [
       StarterKit,
       Color,
-      Highlight,
+      Highlight.configure({
+        multicolor: true,
+      }),
       FontFamily,
       TextStyle,
       Underline,
