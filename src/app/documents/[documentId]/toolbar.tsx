@@ -423,6 +423,7 @@ export function Toolbar() {
       <HighlightColorButton />
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       <LinkButton />
+      <ImageButton />
       {sections[2].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
