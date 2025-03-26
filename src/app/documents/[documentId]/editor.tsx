@@ -2,6 +2,7 @@
 
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
@@ -56,6 +57,7 @@ export function Editor() {
     },
     extensions: [
       StarterKit,
+      TextAlign,
       Color,
       Highlight.configure({
         multicolor: true,
