@@ -57,7 +57,9 @@ export function Editor() {
     },
     extensions: [
       StarterKit,
-      TextAlign,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
       Color,
       Highlight.configure({
         multicolor: true,
