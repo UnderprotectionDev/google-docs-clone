@@ -21,11 +21,13 @@ import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 
 import { useEditorStore } from "@/store/use-editor-store";
+import { Ruler } from "./ruler";
 
 export function Editor() {
   const { setEditor } = useEditorStore();
 
   const editor = useEditor({
+    immediatelyRender: false,
     onCreate({ editor }) {
       setEditor(editor);
     },
@@ -107,6 +109,7 @@ export function Editor() {
 
   return (
     <div className="size-full overflow-x-auto bg-[#FAFBFD] px-4 print:p-0 print:bg-white print:overflow-visible">
+      <Ruler />
       <div className="min-w-max flex justify-center w-[819px] py-4 mx-auto print:py-0 print:w-full print:min-w-0">
         <EditorContent editor={editor} />
       </div>
