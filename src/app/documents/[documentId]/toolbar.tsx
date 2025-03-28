@@ -1,7 +1,7 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 import { useEditorStore } from "@/store/use-editor-store";
 import {
   LucideIcon,
