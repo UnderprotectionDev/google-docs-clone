@@ -12,7 +12,6 @@ export function Navbar() {
         <h3 className="text-xl">Docs</h3>
       </div>
       <SearchInput />
-      <div>123</div>
     </nav>
   );
 }
