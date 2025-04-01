@@ -13,16 +13,19 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { api } from "../../../convex/_generated/api";
 import { useMutation } from "convex/react";
+import { toast } from "sonner";
 
 export function TemplateGallery() {
   const router = useRouter();
   const create = useMutation(api.documents.create);
   const [isCreating, setIsCreating] = useState(false);
 
-  const onTemplateClick = async (title: string, initialContent: string) => {
+  const onTemplateClick = (title: string, initialContent: string) => {
     setIsCreating(true);
-    await create({ title, initialContent })
+    create({ title, initialContent })
+      .catch(() => toast.error("Something went wrong"))
       .then((documentId) => {
+        toast.success("Document created");
         router.push(`/documents/${documentId}`);
       })
       .finally(() => {
