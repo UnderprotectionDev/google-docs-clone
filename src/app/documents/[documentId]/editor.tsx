@@ -25,11 +25,21 @@ import TaskList from "@tiptap/extension-task-list";
 import { useEditorStore } from "@/store/use-editor-store";
 import { Ruler } from "./ruler";
 import { Threads } from "./threads";
+import { LEFT_MARGIN_DEFAULT, RIGHT_MARGIN_DEFAULT } from "@/constants/margins";
 
-export function Editor() {
-  const leftMargin = useStorage((storage) => storage.leftMargin);
-  const rightMargin = useStorage((storage) => storage.rightMargin);
-  const liveblocks = useLiveblocksExtension();
+interface EditorProps {
+  initialContent?: string | undefined;
+}
+
+export function Editor({ initialContent }: EditorProps) {
+  const leftMargin =
+    useStorage((storage) => storage.leftMargin) ?? LEFT_MARGIN_DEFAULT;
+  const rightMargin =
+    useStorage((storage) => storage.rightMargin) ?? RIGHT_MARGIN_DEFAULT;
+  const liveblocks = useLiveblocksExtension({
+    initialContent,
+    offlineSupport_experimental: true,
+  });
   const { setEditor } = useEditorStore();
 
   const editor = useEditor({
@@ -60,7 +70,7 @@ export function Editor() {
     },
     editorProps: {
       attributes: {
-        style: `padding-left: ${leftMargin ?? 56}px; padding-right: ${rightMargin ?? 56}px;`,
+        style: `padding-left: ${leftMargin}px; padding-right: ${rightMargin}px;`,
         class:
           "focus:outline-none print:border-0 bg-white border-[#C7C7C7] flex flex-col min-h-[1054px] w-[816px] pt-10 pr-14 pb-10 cursor-text",
       },
