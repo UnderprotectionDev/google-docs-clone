@@ -27,6 +27,7 @@ export function RemoveDialog({ documentId, children }: RemoveDialogProps) {
   const router = useRouter();
   const remove = useMutation(api.documents.removeById);
   const [isRemoving, setIsRemoving] = useState(false);
+
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
@@ -34,7 +35,7 @@ export function RemoveDialog({ documentId, children }: RemoveDialogProps) {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone.This will permanently delete your
+            This action cannot be undone. This will permanently delete your
             document.
           </AlertDialogDescription>
         </AlertDialogHeader>
