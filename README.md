@@ -132,8 +132,6 @@ Create a `.env.local` file in the root of your project and add the following env
 | `CLERK_SECRET_KEY`                  | Clerk secret key for server-side authentication.      | Clerk Dashboard        |
 | `LIVEBLOCKS_SECRET_KEY`             | Liveblocks secret key for backend authentication.     | Liveblocks Dashboard   |
 
-Example `.env.local` file content:
-
 ```dotenv
 # Convex
 NEXT_PUBLIC_CONVEX_URL=your_convex_url_here
@@ -148,8 +146,6 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 # Liveblocks
 LIVEBLOCKS_SECRET_KEY=your_liveblocks_secret_key_here
 
-# Optional: Base URL for deployment (Needed for some integrations like webhooks)
-# NEXT_PUBLIC_BASE_URL=http://localhost:3000 # Or your production URL
 ```
 
 **Note:** Ensure you add the necessary webhook endpoints in Clerk and potentially Convex/Liveblocks depending on your specific setup.
