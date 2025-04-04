@@ -127,21 +127,21 @@ Create a `.env.local` file in the root of your project and add the following env
 | Variable                            | Description                                           | Found In               |
 | ----------------------------------- | ----------------------------------------------------- | ---------------------- |
 | `NEXT_PUBLIC_CONVEX_URL`            | URL for your Convex deployment backend service.       | Convex Dashboard       |
-| `CONVEX_DEPLOYMENT`                 | Optional: Specific Convex deployment identifier.      | Convex Dashboard / CLI |
+| `CONVEX_DEPLOYMENT`                 | Specific Convex deployment identifier.                | Convex Dashboard / CLI |
 | `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Clerk publishable key for client-side authentication. | Clerk Dashboard        |
 | `CLERK_SECRET_KEY`                  | Clerk secret key for server-side authentication.      | Clerk Dashboard        |
+| `CLERK_ISSUER_URL`                  | Clerk issuer URL for authentication configuration.    | Clerk Dashboard        |
 | `LIVEBLOCKS_SECRET_KEY`             | Liveblocks secret key for backend authentication.     | Liveblocks Dashboard   |
 
 ```dotenv
 # Convex
+CONVEX_DEPLOYMENT=your_convex_deployment_id
 NEXT_PUBLIC_CONVEX_URL=your_convex_url_here
-# CONVEX_DEPLOYMENT=your_convex_deployment_id (Optional)
 
 # Clerk
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
 CLERK_SECRET_KEY=your_clerk_secret_key_here
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+CLERK_ISSUER_URL=your_clerk_issuer_url_here
 
 # Liveblocks
 LIVEBLOCKS_SECRET_KEY=your_liveblocks_secret_key_here
